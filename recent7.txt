@@ -1,0 +1,38 @@
+5 differences between stacks and queues
+1. Order of element removal
+   * Stack: Last In, First Out (LIFO)
+   * Queue: First In, First Out (FIFO)
+
+2. Operations
+
+   * Stack: push (add), pop (remove)
+   * Queue: enqueue (add), dequeue (remove)
+
+3. Access point
+
+   * Stack: Elements are added and removed from the same end (top).
+   * Queue: Elements are added at the rear and removed from the front.
+
+4. Use cases
+
+   * Stack: Undo mechanisms, function call stack, backtracking.
+   * Queue: Task scheduling, buffers, print queues.
+
+5. Processing order
+
+   * Stack: Processes the most recently added item first.
+   * Queue: Processes the earliest added item first.
+ 
+2. find out time complexity of stack and queues
+Stack Time Complexity
+
+* Push (insert): O(1)
+* Pop (remove): O(1)
+* Peek (top element): O(1)
+* Search: O(n)
+
+Queue Time Complexity
+* Enqueue (insert): O(1)
+* Dequeue (remove): O(1)
+* Front/Peek: O(1)
+* Search: O(n)
