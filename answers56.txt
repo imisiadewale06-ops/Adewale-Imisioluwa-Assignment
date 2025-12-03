@@ -1,0 +1,107 @@
+1. Differences between arrays and linked lists
+ARRAYS
+-Stored in a contiguous block of memory.
+-Provide O(1) random access using an index.
+-Inserting or deleting in the middle is costly because elements must be shifted.
+-Have a fixed size (in most languages); resizing is expensive.
+-Very cache-friendly due to contiguous memory.
+
+Linked Lists
+-Consist of nodes that are linked together using pointers.
+-Access time is O(n) because you must traverse from the head to reach a node.
+-Insertions and deletions in the middle are efficient (just pointer updates).
+-Dynamic size; can grow or shrink easily.
+-Uses extra memory for storing pointers and has poor cache locality.
+
+2. Time complexitiy of insertion in a linked list
+Singly Linked List (SLL)
+-Insertion at head
+-O(1) — just update `next` pointer.
+-Insertion at tail
+-O(n), if there is no tail pointer (must traverse to last node).
+-O(1) if a tail pointer exists.
+Insertion in the middle
+-O(1) once the target node is known (pointer update only).
+-O(n) if you must search for the insertion point.
+
+Double Linked List (DLL)
+Insertion at head
+-O(1) — update both `next` and `prev` pointers.
+Insertion at tail
+-O(1) — DLLs almost always maintain a tail pointer.
+Insertion in the middle
+-O(1) once you have the node (update `next` and `prev`).
+-O(n) if you need to search for the insertion point.
+
+3. key differences between primitive data types and Abstract Data Types (ADTs)
+Primitive Data Types
+-Built-in, basic data types provided directly by the programming language.
+-Hold simple, indivisible values (e.g., 'int', 'float', 'char', 'boolean').
+-Operations on them are predefined by the language.
+-Fixed size and fixed behavior.
+-Stored directly in memory (often on the stack).
+-Fast to process and require minimal memory.
+
+Abstract Data Types (ADTs)
+-Conceptual / logical models of data structures defined by **behavior**, not implementation.
+-Examples include **List**, **Stack**, Queue**, **Tree**, **Graph**, **Map**.
+-Specify what operations can be performed, but *not* how they’re implemented.
+-Implementation can vary (e.g., a List can be an array list or linked list).
+-Typically built using primitive types or other data structures.
+-More complex and can grow dynamically.
+
+4. Why Arrays Are considered Static
+-Their size is fixed at creation.
+-They use one contiguous memory block, so they can’t grow without creating a new array.
+Why Linked Lists Are Dynamic
+-They grow and shrink by adding or removing nodes at runtime.
+-Nodes are stored separately in memory and linked by pointers, so no fixed size is required.
+
+5. In what situation would you prefer a linked list over an array?
+You’d prefer a linked list over an array when:
+-You need frequent insertions or deletions, especially in the middle.
+-You don’t know the final size in advance or the size needs to change often.
+-Memory availability is scattered (no large contiguous block needed).
+-You don’t need fast random access (indexing).
+
+6. Give real-world Examples where Each of the following would be useful:
+1. Stack (LIFO — Last In, First Out)
+A stack is best when the most recently added item needs to be accessed first.
+
+Real-World Examples
+-Browser Back Button:
+Every page you visit is pushed onto a stack.
+When you click Back, the most recent page is popped off.
+
+- Undo/Redo in Editors
+Each action you take in Word, Photoshop, etc. is pushed onto an undo stack.
+To undo, the program pops actions off the stack in reverse order.
+
+-Function Calls in Programming
+The system call stack stores active functions.
+When a function finishes, it pops off the stack and returns to the previous one.
+
+ii. Queue (FIFO — First In, First Out)
+A queue is ideal when you process items in the order they arrive.
+Real-World Examples
+- Waiting Lines (e.g., Supermarket Checkout)
+First customer in line is the first served.
+
+-Print Queue
+Print jobs are placed in a queue and handled in arrival order.
+
+-Customer Service Ticketing
+Requests or calls are processed in the order submitted.
+
+iii. Linked List
+A linked list is useful when you need efficient insertions or deletions anywhere, without shifting elements.
+
+Real-World Examples
+-Music Playlist Where You Can Insert/Remove Songs
+Media players often store playlists as linked lists so you can skip, insert, or remove songs efficiently.
+
+-Navigation Through a Document (Prev/Next)
+A PDF reader might maintain pages in a doubly linked list so you can move forward/back easily.
+
+- Memory Allocation (Free Lists)
+Operating systems use linked lists to manage blocks of free memory because they can quickly insert or remove blocks.
